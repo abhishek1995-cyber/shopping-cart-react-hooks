@@ -12,6 +12,7 @@ function Cart(props){
     const handleClose = () => {
         props.dispatch(closeCart(!props.isOpen))
     }
+
     return (
         <>
  
@@ -29,6 +30,7 @@ function Cart(props){
                   <h2 className="main-title mt-7">{cartItem.title}</h2>
                   <p>{cartItem.currencyFormat + cartItem.price}</p>
                   <p>{cartItem.style}</p>
+                  <p ><span>Sizes :</span>{cartItem.availableSizes.map((e,i) => <span className="border ml-2 p-1 rounded-full">{e}</span>)}</p>
                     </div>
                     <div> 
                         <i onClick={()=> handleDelete(i)} className="text-2xl mt-10 hover:bg-red-700 cursor-pointer fa-solid fa-trash-can-arrow-up"></i>
@@ -49,7 +51,8 @@ function Cart(props){
 function mapStateToProps(state){
     return {
         cart: state.cartProduct,
-        isOpen: state.isOpen
+        isOpen: state.isOpen,
+        sizes: state.sizes
     }
 }
 

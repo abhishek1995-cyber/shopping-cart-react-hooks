@@ -38,3 +38,9 @@ export function deleteItem(data){
         payload: data
     }
 }
+// export function selectSize(data){
+//     return {
+//         type: 'SELECT_SIZE',
+//         payload: data
+//     }
+// }

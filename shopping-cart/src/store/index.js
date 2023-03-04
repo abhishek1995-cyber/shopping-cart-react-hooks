@@ -40,7 +40,7 @@ const reducer = (state = initValues, action) => {
     case "ADDTO_CART":
         return {
         ...state,
-            cartProduct : [...state.cartProduct, action.payload]
+            cartProduct : [...state.cartProduct, action.payload],
                 }       
     case "DELETE_ITEM":
        state.cartProduct.splice(action.payload,1)
